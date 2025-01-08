@@ -1,4 +1,4 @@
-from graphics import Line, Point, Window
+from graphics import Window, Line, Point
 
 class Cell():
 
@@ -52,7 +52,9 @@ class Cell():
         end = Point(to_cell.x1 + abs(to_cell.x2 - to_cell.x1)//2, to_cell.y1 + abs(to_cell.y2 - to_cell.y1)//2)
         
         fil_col = "yellow"
+        width = 10
         if undo:
-            fil_col = "blue"            
+            fil_col = "blue"
+            width /= 2
         
-        self._win.draw_line(Line(start, end), fil_col)
+        self._win.draw_line(Line(start, end), fil_col, width)
